@@ -44,6 +44,14 @@ class AuthService {
     // this will reload the page and reset the state of the application
     window.location.assign('/');
   }
+
+  getAuthHeader() {
+    const token = this.getToken();
+    if (token) {
+      return { Authorization: `Bearer ${token}` };
+    }
+    return {};
+  }
 }
 
 export default new AuthService();
