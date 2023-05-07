@@ -13,7 +13,7 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-import { SAVE_BOOK } from '../graphql/mutations';
+import { SAVE_BOOK } from '../graphql/mutations/saveBook';
 
 // Define SearchBooks component
 const SearchBooks = () => {
@@ -165,8 +165,8 @@ const handleSaveBook = async (bookId) => {
         <Row>
           {searchedBooks.map((book) => {
             return (
-              <Col md="4">
-                <Card key={book.bookId} border='dark'>
+              <Col md="4" key={book.bookId}>
+                <Card border='dark'>
                   {book.image ? (
                     <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                   ) : null}

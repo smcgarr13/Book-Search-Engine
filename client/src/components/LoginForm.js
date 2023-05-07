@@ -4,7 +4,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 
 // Import LOGIN_USER mutation and Auth utility
-import { LOGIN_USER } from '../graphql/mutations';
+import { LOGIN_USER } from '../graphql/mutations/loginUser';
 import Auth from '../utils/auth';
 
 // Define LoginForm component

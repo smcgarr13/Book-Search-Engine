@@ -8,8 +8,8 @@ import {
   Col
 } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_ME } from '../graphql/queries';
-import { REMOVE_BOOK } from '../graphql/mutations';
+import { GET_ME } from '../graphql/queries/getMe';
+import { REMOVE_BOOK } from '../graphql/mutations/removeBook';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
