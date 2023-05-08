@@ -57,6 +57,7 @@ const SearchBooks = () => {
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
+        infoLink: book.volumeInfo.infoLink,
       }));
 
       setSearchedBooks(bookData);
@@ -174,6 +175,9 @@ const handleSaveBook = async (bookId) => {
                     <Card.Title>{book.title}</Card.Title>
                     <p className='small'>Authors: {book.authors}</p>
                     <Card.Text>{book.description}</Card.Text>
+                    <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
+                      View on Google Books
+                    </a>
                     {Auth.loggedIn() && (
                       <Button
                         disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}

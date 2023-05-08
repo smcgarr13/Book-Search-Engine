@@ -21,13 +21,20 @@ const server = new ApolloServer({
 // Apply Apollo Server as a middleware to the Express app
 server.applyMiddleware({ app });
 
+app.use(server.getMiddleware({ path: '/graphql', debug: true }));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// if we're in production, serve client/build as static assets
+// If we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
+
+// // Catch-all route
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 
 // app.use(routes);
 

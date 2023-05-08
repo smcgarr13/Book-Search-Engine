@@ -35,13 +35,17 @@ const SignupForm = () => {
     }
 
     try {
+      console.log('Submitting userFormData:', userFormData);
       // Execute the addUser mutation with the userFormData
-      const { data } = await addUser({ variables: { ...userFormData } });
+      const { data } = await addUser({ variables: { ...userFormData }
+      });
 
+      console.log('addUser response:', data);
       // Log the user in after a successful signup
       Auth.login(data.addUser.token);
     } catch (err) {
-      console.error(err);
+      // console.error(err);
+      console.error('Error during addUser mutation:', err);
       setShowAlert(true);
     }
 
@@ -109,7 +113,7 @@ const SignupForm = () => {
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
-          Submit
+          Sign-Up
         </Button>
       </Form>
     </>
