@@ -14,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@wry/context": "^0.7.2",
+    "@wry/equality": "^0.5.5"
   }
 }

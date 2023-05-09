@@ -28,6 +28,7 @@ const typeDefs = gql`
 
   # Define the Query type for the GraphQL schema
   type Query {
+    test: String
     me: User
   }
 

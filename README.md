@@ -58,5 +58,7 @@ Please email me directly if you have any additional questions.
 Email: unicorn@magical.com
 
 ## Link to Deployed Application:
+https://book-search-engine-sm.herokuapp.com/
 
 ## GitHub Repo:
+https://github.com/smcgarr13/Book-Search-Engine
