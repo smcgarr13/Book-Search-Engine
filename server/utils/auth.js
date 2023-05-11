@@ -24,8 +24,12 @@ module.exports = {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       console.log('Decoded data:', data);
       req.user = data;
-    } catch {
-      console.log('Invalid token');
+    // } catch {
+    //   console.log('Invalid token');
+    //   return res.status(400).json({ message: 'invalid token!' });
+    // }
+    } catch (error) {
+      console.log('Error in authMiddleware:', error);
       return res.status(400).json({ message: 'invalid token!' });
     }
 
